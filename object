@@ -13,6 +13,13 @@ class Student{
             this->age=age;
             this->name=name;
         }
+	// copy constructor  
+        Student(const Student &srcobj){
+            cout<<"Copy constructor get called "<<endl;
+            this->id=srcobj.id;
+            this->age=srcobj.age;
+            this->name=srcobj.name;
+        }
         void study(){
             cout<<this->name<<" student is studying"<<endl;
         }
@@ -27,11 +34,14 @@ class Student{
 
 int main(){
 		Student A(1001,17,"vinayak");
-		Student B(1002,18,"harkirat");
-		cout<<A.name<<" "<<A.id<<" "<<A.age<<endl;
-		cout<<B.name<<" "<<B.id<<" "<<B.age<<endl;
+		//Student B(1002,18,"harkirat");
+		//cout<<A.name<<" "<<A.id<<" "<<A.age<<endl;
+		//cout<<B.name<<" "<<B.id<<" "<<B.age<<endl;
 		A.study();
-		B.sleep();
+		//B.sleep();
+		Student C(A); // Student C=A;
+		cout<<A.name<<"  "<<C.name<<endl;
+		C.sleep();
 }
 
 
