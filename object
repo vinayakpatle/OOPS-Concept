@@ -6,9 +6,12 @@ class Student{
         int id;
         int age;
         string name;
-        // constructoer--default
-        Student(){
-            cout<<"Student constructor get called"<<endl;
+        // constructoer--parameterised --mostly used
+        Student(int id,int age,string name){
+            cout<<"Student parameterised constructor get called"<<endl;
+            this->id=id;
+            this->age=age;
+            this->name=name;
         }
         void study(){
             cout<<this->name<<" student is studying"<<endl;
@@ -18,25 +21,17 @@ class Student{
         }
         // destructor--default
         ~Student(){
-						cout<<"Destructor get called "<<endl;
+			cout<<"Destructor get called "<<endl;
         }
 };
 
 int main(){
-		Student A,B;
-		A.id=1;
-		A.age=15;
-		A.name="vinayak";
-
-		B.id=3;
-    B.age=17;
-		B.name="Harkirat";
-
+		Student A(1001,17,"vinayak");
+		Student B(1002,18,"harkirat");
+		cout<<A.name<<" "<<A.id<<" "<<A.age<<endl;
+		cout<<B.name<<" "<<B.id<<" "<<B.age<<endl;
 		A.study();
-		A.sleep();
-		B.study();
 		B.sleep();
-		return 0;
 }
 
 
