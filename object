@@ -6,14 +6,16 @@ class Student{
         int id;
         int age;
         string name;
+        float *gpa;
         // constructoer--parameterised --mostly used
-        Student(int id,int age,string name){
+        Student(int id,int age,string name,float gpa){
             cout<<"Student parameterised constructor get called"<<endl;
             this->id=id;
             this->age=age;
             this->name=name;
+            this->gpa=new float(gpa);
         }
-	// copy constructor  
+        // copy constructor  
         Student(const Student &srcobj){
             cout<<"Copy constructor get called "<<endl;
             this->id=srcobj.id;
@@ -29,21 +31,28 @@ class Student{
         // destructor--default
         ~Student(){
 			cout<<"Destructor get called "<<endl;
+			delete this->gpa;
         }
 };
 
 int main(){
-		Student A(1001,17,"vinayak");
+		//Student A(1001,17,"vinayak");
 		//Student B(1002,18,"harkirat");
 		//cout<<A.name<<" "<<A.id<<" "<<A.age<<endl;
 		//cout<<B.name<<" "<<B.id<<" "<<B.age<<endl;
-		A.study();
+		//A.study();
 		//B.sleep();
-		Student C(A); // Student C=A;
-		cout<<A.name<<"  "<<C.name<<endl;
-		C.sleep();
+		//Student C(A); // Student C=A;
+		//cout<<A.name<<"  "<<C.name<<endl;
+		//C.sleep();
+		
+		// Dynamically merory allocation or student pointer
+		Student *D=new Student(100,21,"Ranu",9.9);
+		cout<<D->name<<" "<<D->age<<endl;
+		D->study();
+		delete D;
+		return 0;
 }
-
 
 
 
