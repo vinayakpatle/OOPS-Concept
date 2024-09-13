@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+
+class Student{
+    public:
+        int id;
+        int age;
+        string name;
+        // constructoer--default
+        Student(){
+            cout<<"Student constructor get called"<<endl;
+        }
+        void study(){
+            cout<<this->name<<" student is studying"<<endl;
+        }
+        void sleep(){
+            cout<<this->name<<" student is sleeping"<<endl;
+        }
+        // destructor--default
+        ~Student(){
+						cout<<"Destructor get called "<<endl;
+        }
+};
+
+int main(){
+		Student A,B;
+		A.id=1;
+		A.age=15;
+		A.name="vinayak";
+
+		B.id=3;
+    B.age=17;
+		B.name="Harkirat";
+
+		A.study();
+		A.sleep();
+		B.study();
+		B.sleep();
+		return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
