@@ -33,5 +33,5 @@ int main(){
     selectionSort(arr1,size1);
     print(arr1,size1);
 
-
+    return 0;
 }
